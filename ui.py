@@ -25,7 +25,7 @@ def make_step_frame(parent, text):
         frame,
         text=text + " 🍉",
         font=header_font,
-        fg="#1b4f4f",
+        fg="#143b3b",
         bg="#fadee3"
     )
     label.pack(anchor="w", pady=(0, 1))
@@ -35,14 +35,14 @@ def create_main_window():
     window = tk.Tk()
     window.title("🍉 Subarashii Melon 🍉")
     window.geometry("440x710")
-    window.configure(bg="#d5ffbf")
+    window.configure(bg="#EDFCA6")
 
     tk.Label(
         window,
         text="🍉 Eecamg Watermelon",
         font=title_font,
         fg="#072020",
-        bg="#d5ffbf"
+        bg="#EDFCA6"
     ).pack(pady=6)
 
     # Step 1
