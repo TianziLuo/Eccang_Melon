@@ -51,29 +51,21 @@ def run_copy_cvs():
     except Exception as e:
         messagebox.showerror("Error", f"Copy CSV failed:\n{e}")
 
-def step2_unzip():
-    print("🍉 Running: Unzip files")
+def step2_to_4_all():
+    print("🍉 Running: Step 2 ➜ 4 (Unzip ➜ Convert ➜ Rename)")
     try:
         unzip()
-        messagebox.showinfo("Done", "Step 2 (Unzip) completed ✅")
-    except Exception as e:
-        messagebox.showerror("Error", f"Step 2 error:\n{e}")
-
-def step3_convert():
-    print("🍉 Running: Convert XLS to CSV")
-    try:
+        print("✔ Step 2 completed")
+        
         xls2csv()
-        messagebox.showinfo("Done", "Step 3 (Convert CSV) completed ✅")
-    except Exception as e:
-        messagebox.showerror("Error", f"Step 3 error:\n{e}")
-
-def step4_rename():
-    print("🍉 Running: Rename files")
-    try:
+        print("✔ Step 3 completed")
+        
         rename()
-        messagebox.showinfo("Done", "Step 4 (Rename) completed ✅")
+        print("✔ Step 4 completed")
+        
+        messagebox.showinfo("Done", "All Steps (2 ➜ 4) completed ✅")
     except Exception as e:
-        messagebox.showerror("Error", f"Step 4 error:\n{e}")
+        messagebox.showerror("Error", f"Step 2-4 error:\n{e}")
 
 def step5_copy():
     print("🍉 Running: Copy downloaded files")
