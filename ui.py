@@ -3,8 +3,7 @@ from steps import (
     run_clean_folder,
     run_copy_purchase,
     run_open_excel,
-    run_save_cvs,
-    run_copy_cvs,
+    run_save_copy_cvs,
     step2_to_4_all,
     step5_copy,
 )
@@ -32,7 +31,7 @@ def make_step_frame(parent, text):
 def create_main_window():
     window = tk.Tk()
     window.title("🍉 Subarashii Melon 🍉")
-    window.geometry("440x515")
+    window.geometry("400x480")
     window.configure(bg="#EDFCA6")
 
     tk.Label(
@@ -45,16 +44,15 @@ def create_main_window():
 
     # Step 1
     frame1 = make_step_frame(window, "Step 1: Purchase Process")
-    frame1.pack(padx=30, pady=10, fill="x")
+    frame1.pack(padx=25, pady=10, fill="x")
     tk.Button(frame1, text="1.Clean Folder", command=run_clean_folder, **btn_params).pack(padx=4, pady=2)
     tk.Button(frame1, text="2.Copy Purchase Files", command=run_copy_purchase, **btn_params).pack(padx=4, pady=2)
     tk.Button(frame1, text="3.Open Excel", command=run_open_excel, **btn_params).pack(padx=4, pady=2)
-    tk.Button(frame1, text="4.Save As CSV", command=run_save_cvs, **btn_params).pack(padx=4, pady=2)
-    tk.Button(frame1, text="5.Copy CSV Files", command=run_copy_cvs, **btn_params).pack(padx=4, pady=2)
-
+    tk.Button(frame1, text="4.Save & Copy CSV", command=run_save_copy_cvs, **btn_params).pack(padx=4, pady=2)
+    
     # Step 2
     frame2 = make_step_frame(window, "Step 2 - 4: Unzip ➜ Convert ➜ Rename")
-    frame2.pack(padx=30, pady=10, fill="x")
+    frame2.pack(padx=25, pady=10, fill="x")
     tk.Button(
     frame2,
     text= "Unzip, Convert, Rename",
@@ -62,9 +60,9 @@ def create_main_window():
     **btn_params
 ).pack(padx=4, pady=2)
 
-    # Step 5
-    frame3 = make_step_frame(window, "Step 5: Copy Downloaded Files")
-    frame3.pack(padx=30, pady=10, fill="x")
+    # Step 3
+    frame3 = make_step_frame(window, "Step 5: Copy Downloads Files")
+    frame3.pack(padx=25, pady=10, fill="x")
     tk.Button(frame3, text="Copy Downloaded Files", command=step5_copy, **btn_params).pack(padx=4, pady=2)
 
     return window

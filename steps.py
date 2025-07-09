@@ -6,6 +6,7 @@ from purchase.func import (
     save_cvs,
     copy_cvs,
 )
+import time
 from unzip import unzip
 from xls2csv import xls2csv
 from rename import rename
@@ -35,21 +36,18 @@ def run_open_excel():
     except Exception as e:
         messagebox.showerror("Error", f"Open Excel failed:\n{e}")
 
-def run_save_cvs():
+def run_save_copy_cvs():
     print("🍉 Running: Save CSV")
     try:
         save_cvs()
-        messagebox.showinfo("Done", "CSV saved ✅")
+
+        time.sleep(1)
+
+        copy_cvs()
+        
+        messagebox.showinfo("Done", "CSV saved and copied✅")
     except Exception as e:
         messagebox.showerror("Error", f"Save CSV failed:\n{e}")
-
-def run_copy_cvs():
-    print("🍉 Running: Copy CSV files")
-    try:
-        copy_cvs()
-        messagebox.showinfo("Done", "CSV files copied ✅")
-    except Exception as e:
-        messagebox.showerror("Error", f"Copy CSV failed:\n{e}")
 
 def step2_to_4_all():
     print("🍉 Running: Step 2 ➜ 4 (Unzip ➜ Convert ➜ Rename)")
