@@ -12,42 +12,38 @@ from xls2csv import xls2csv
 from rename import rename
 from copy_download import copy_download
 
-def run_clean_folder():
-    print("🍉 Running: Clean folder")
+def run_purchase_files():
+    print("🍉 Running: Update purchase folder")
     try:
         clean_folder()
-        messagebox.showinfo("Done", "Folder cleaned ✅")
-    except Exception as e:
-        messagebox.showerror("Error", f"Clean folder failed:\n{e}")
+        print("✔ Clean Folder completed")
+        time.sleep(2)
 
-def run_copy_purchase():
-    print("🍉 Running: Copy purchase files")
-    try:
         copy_purchase()
-        messagebox.showinfo("Done", "Purchase files copied ✅")
-    except Exception as e:
-        messagebox.showerror("Error", f"Copy purchase failed:\n{e}")
+        print("✔ Copy Files completed")
+        time.sleep(2)
 
-def run_open_excel():
-    print("🍉 Running: Open Excel template")
-    try:
         open_excel()
-        messagebox.showinfo("Done", "Excel template opened ✅")
+        print("✔ Open Excel completed")
+
+        messagebox.showinfo("Done", "Folder Updated ✅")
     except Exception as e:
-        messagebox.showerror("Error", f"Open Excel failed:\n{e}")
+        messagebox.showerror("Error", f"❌ Folder Updated failed:\n{e}")
+
 
 def run_save_copy_cvs():
     print("🍉 Running: Save CSV")
     try:
         save_cvs()
-
+        print("✔ Save As completed")
         time.sleep(1)
 
         copy_cvs()
+        print("✔ Copy CSV completed")
         
         messagebox.showinfo("Done", "CSV saved and copied✅")
     except Exception as e:
-        messagebox.showerror("Error", f"Save CSV failed:\n{e}")
+        messagebox.showerror("Error", f"Process CSV failed:\n{e}")
 
 def step2_to_4_all():
     print("🍉 Running: Step 2 ➜ 4 (Unzip ➜ Convert ➜ Rename)")

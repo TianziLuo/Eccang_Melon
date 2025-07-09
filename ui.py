@@ -1,8 +1,6 @@
 import tkinter as tk
 from steps import (
-    run_clean_folder,
-    run_copy_purchase,
-    run_open_excel,
+    run_purchase_files,
     run_save_copy_cvs,
     step2_to_4_all,
     step5_copy,
@@ -45,10 +43,8 @@ def create_main_window():
     # Step 1
     frame1 = make_step_frame(window, "Step 1: Purchase Process")
     frame1.pack(padx=25, pady=10, fill="x")
-    tk.Button(frame1, text="1.Clean Folder", command=run_clean_folder, **btn_params).pack(padx=4, pady=2)
-    tk.Button(frame1, text="2.Copy Purchase Files", command=run_copy_purchase, **btn_params).pack(padx=4, pady=2)
-    tk.Button(frame1, text="3.Open Excel", command=run_open_excel, **btn_params).pack(padx=4, pady=2)
-    tk.Button(frame1, text="4.Save & Copy CSV", command=run_save_copy_cvs, **btn_params).pack(padx=4, pady=2)
+    tk.Button(frame1, text="Update Purchase Folder", command=run_purchase_files, **btn_params).pack(padx=4, pady=2)
+    tk.Button(frame1, text="Save & Copy CSV", command=run_save_copy_cvs, **btn_params).pack(padx=4, pady=2)
     
     # Step 2
     frame2 = make_step_frame(window, "Step 2 - 4: Unzip ➜ Convert ➜ Rename")
