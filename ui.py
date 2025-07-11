@@ -5,7 +5,7 @@ from steps import (
     step2_to_4_all,
     step5_copy,
 )
-from styles import btn_params, default_font, header_font, title_font
+from styles import btn_params, header_font, title_font
 
 def make_step_frame(parent, text):
     frame = tk.Frame(
@@ -29,7 +29,7 @@ def make_step_frame(parent, text):
 def create_main_window():
     window = tk.Tk()
     window.title("🍉 Subarashii Melon 🍉")
-    window.geometry("400x480")
+    window.geometry("400x400")
     window.configure(bg="#EDFCA6")
 
     tk.Label(
